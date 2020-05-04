@@ -1,0 +1,24 @@
+﻿@{
+    //Layout = null;
+    ViewData["Title"] = "Home";
+}
+
+
+<h2>Store</h2>
+<br />
+
+<div class="row">
+
+    @foreach (Product p in ViewBag.Products)
+    {
+        <div class="col-md-6">
+            <div class="jumbotron">
+                <h1 class="display-5">@p.name</h1>
+                <p class="lead"> @p.content </p>
+                <hr class="my-4">
+                <p>Category: <a asp-controller="Categories" asp-action="Index"> @p.category.name </a></p> @*@p.category.name*@
+                <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
+            </div>
+        </div>
+    }
+</div>
